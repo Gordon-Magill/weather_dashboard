@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS file -->
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="./assets/style/style.css"/>
+</head>
+<body>
+    <header>
+        <h1>Header Title</h1>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+        </ul>
+    </header>
+    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Fluid jumbotron</h1>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+    </div>
+
+    <!-- Body container -->
+    <section class="container">
+        <section class="row">
+            <!-- Section for search bar and saved cities on the left -->
+            <section class="col-3">
+                <h2>Search for a city:</h2>
+                <input type="text" placeholder="Search cities">
+                <input type="submit" id="btnSearchCities">
+                <hr class="my-4">
+            </section>
+
+            <!-- Section for results on the right -->
+            <section class="col-9 column">
+
+                <!-- Section for current conditions -->
+                <section id="currentConditionsContainer">
+                    <h2>Current forecast for XXX</h2>
+                </section>
+
+                <!-- Section for 5-day forecast -->
+                <section class="container">
+                    <h2>5 day forecast</h2>
+                    <!-- Container for forecast cards -->
+                    <section class="row">
+
+                        <!-- Day +1 -->
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">An item</li>
+                              <li class="list-group-item">A second item</li>
+                              <li class="list-group-item">A third item</li>
+                            </ul>
+                          </div>
+
+                    </section>
+                </section>
+
+            </section>
+
+        </section>
+
+
+    </section>
+
+
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
