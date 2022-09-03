@@ -15,30 +15,25 @@
     <link rel="stylesheet" href="./assets/style/style.css"/>
 </head>
 <body>
-    <header>
-        <h1>Header Title</h1>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
-        </ul>
+  <section class="container">
+    <header class="row">
+      <h1 class="col-8">Header Title</h1>
+      <ul class="nav justify-content-end col-4">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+      </ul>
     </header>
-    
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Fluid jumbotron</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        </div>
-    </div>
+  </section>
 
     <!-- Body container -->
     <section class="container">
@@ -49,6 +44,22 @@
                 <input type="text" placeholder="Search cities">
                 <input type="submit" id="btnSearchCities">
                 <hr class="my-4">
+                <div class="card">
+                    <div class="card-body">
+                      City A
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        City B
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        City C
+                    </div>
+                </div>
+
             </section>
 
             <!-- Section for results on the right -->
@@ -67,15 +78,15 @@
 
                         <!-- Day +1 -->
                         <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <h5 class="card-title">Forecast date</h5>
+                              <p class="card-text">Icon here for the weather</p>
                             </div>
+                            <img src="..." class="card-img-top" alt="...">
                             <ul class="list-group list-group-flush">
-                              <li class="list-group-item">An item</li>
-                              <li class="list-group-item">A second item</li>
-                              <li class="list-group-item">A third item</li>
+                              <li class="list-group-item">Temperature: XXC</li>
+                              <li class="list-group-item">Humidity: YY%</li>
+                              <li class="list-group-item">Wind: Woosh</li>
                             </ul>
                           </div>
 
