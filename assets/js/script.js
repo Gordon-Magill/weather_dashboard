@@ -17,7 +17,7 @@ function addCityCard(cityName) {
     for (i=0;i<cityList.length;i++) {
         if (cityList[i]=== cityName) {
             // If the city card already exists, do nothing
-            console.log(`${cityName} card already exists.`)
+            console.log(`${cityName} card already exists, stopping card creation.`)
             return;
         }
     }
