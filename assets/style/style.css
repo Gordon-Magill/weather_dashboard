@@ -6,3 +6,16 @@ header {
 main h2 {
     font-size: 6vmin;
 }
+
+.card-body {
+    font-size: 4vmin;
+
+}
+
+.card-text {
+    font-size: 12vmin
+}
+
+.uvIndexItem {
+    color: purple;
+}

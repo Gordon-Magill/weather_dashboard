@@ -26,60 +26,88 @@
   </header>
 
     <!-- Body container -->
-    <main class="container">
+    <main class="container d-flex ">
       <!--  -->
         <section class="row">
             <!-- Section for search bar and saved cities on the left -->
-            <section class="col-4">
-                <h2>Search for a city:</h2>
-                <input type="text" placeholder="Search cities" class="col-12">
-                <input type="submit" id="btnSearchCities">
-                <hr class="my-4">
-                <div class="card">
-                    <div class="card-body">
-                      City A
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        City B
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        City C
-                    </div>
-                </div>
+            <section
+            class="col-4 flex-column justify-content-center align-items-center px-1"
+            id="leftBarContainer">
+
+              <h2 class="my-1">Search:</h2>
+              <input type="text" placeholder="City name" class="col-12 my-1" id="formSearchCities">
+              <input type="submit" id="btnSearchCities" class="my-1">
+              <hr class="my-2">
+              <div class="card my-1">
+                  <div class="card-body p-1">
+                    South San Francisco Test
+                  </div>
+              </div>
+              <div class="card my-1">
+                  <div class="card-body p-1">
+                      London Test
+                  </div>
+              </div>
+              <div class="card my-1">
+                  <div class="card-body p-1">
+                      ABQ Test
+                  </div>
+              </div>
 
             </section>
 
             <!-- Section for results on the right -->
-            <section class="col-8 column">
+            <section class="col-8 column px-1">
 
                 <!-- Section for current conditions -->
                 <section id="currentConditionsContainer">
-                    <h2>Current forecast for XXX</h2>
+                    <h2 class="text-center">Current forecast for <br><span id="cityNameTitle">Big City 1</span>:</h2>
+                    <div class="card col-12 my-1 px-1" style="width: 18rem;">
+                      <div class="card-body p-1">
+                        <h5 class="card-title my-1">Septober 1st</h5>
+                        <p class="card-text text-center">&#x26C5</p>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item p-1">Temperature: XXC</li>
+                        <li class="list-group-item p-1">Humidity: YY%</li>
+                        <li class="list-group-item p-1">Wind: Woosh</li>
+                        <li class="list-group-item p-1 uvIndexItem" data-UV="low">UV Index: Burnin'</li>
+                      </ul>
+                  </div>
+
                 </section>
 
                 <!-- Section for 5-day forecast -->
                 <section class="container">
-                    <h2>5 day forecast</h2>
+                    <h2 class="mt-2">5 day forecast:</h2>
                     <!-- Container for forecast cards -->
                     <section class="row">
 
                         <!-- Day +1 -->
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                              <h5 class="card-title">Forecast date</h5>
-                              <p class="card-text">Icon here for the weather</p>
-                            </div>
-                            <img src="..." class="card-img-top" alt="...">
-                            <ul class="list-group list-group-flush">
-                              <li class="list-group-item">Temperature: XXC</li>
-                              <li class="list-group-item">Humidity: YY%</li>
-                              <li class="list-group-item">Wind: Woosh</li>
-                            </ul>
+                        <div class="card col-12 my-1 px-1" style="width: 18rem;">
+                          <div class="card-body p-1">
+                            <h5 class="card-title">Septober 1st</h5>
+                            <p class="card-text text-center">&#x26C5</p>
                           </div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-1">Temperature: XXC</li>
+                            <li class="list-group-item p-1">Humidity: YY%</li>
+                            <li class="list-group-item p-1">Wind: Woosh</li>
+                          </ul>
+                      </div>
+    
+                      <div class="card col-12 my-1 px-1" style="width: 18rem;">
+                        <div class="card-body p-1">
+                          <h5 class="card-title">Septober 1st</h5>
+                          <p class="card-text">&#x26C5</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item p-1">Temperature: XXC</li>
+                          <li class="list-group-item p-1">Humidity: YY%</li>
+                          <li class="list-group-item p-1">Wind: Woosh</li>
+                        </ul>
+                    </div>
+  
 
                     </section>
                 </section>
