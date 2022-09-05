@@ -54,3 +54,10 @@ main h2 {
     color: purple;
 
 }
+
+.hoverShadow:hover {
+    box-shadow: 0 0 10px 0 rgb(50, 50, 50);
+    transition: all 0.15s ease-in-out;
+    filter: none;
+    cursor: pointer;
+  }

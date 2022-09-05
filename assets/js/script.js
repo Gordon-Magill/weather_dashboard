@@ -36,6 +36,11 @@ function addCityCard(cityName) {
     var newCityCard = $('<div>')
     newCityCard.addClass('card my-1')
     newCityCard.attr('id',cityName)
+    newCityCard.addClass('hoverShadow')
+    newCityCard.on('click',function (event){
+        event.preventDefault()
+        getConditions(cityName)
+    })
 
     // Create bootstrap card body
     var newCityBody = $('<div>')
