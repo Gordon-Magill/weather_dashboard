@@ -92,6 +92,8 @@ function getExtendedUVData(data) {
     var curTemp = data.main.temp;
     var curHumidity = data.main.humidity;
     var curWindSpd = data.wind.speed;
+    var cityName = data.name;
+
 
     // Separate potentially paid API call just to get UVI...ugh...
     var lat = data.coord.lat;
@@ -104,12 +106,27 @@ function getExtendedUVData(data) {
         .then(function(data){
             console.log(data)
             var curUVI = data.current.uvi;
+
+            renderCurrentConditions()
+            renderForecastConditions()
         })
 
 }
 
 function renderCurrentConditions() {
-    return;
+    var currentConditionsContainer = $('<section id="currentConditionsContainer">')
+    
+    var currentConditionsTitle = $('<h2>');
+    currentConditionsTitle.text(`Current forecast for ${cityName}:`);
+    currentConditionsContainer.append(currentConditionsTitle);
+
+    function weatherToUnicode() {
+
+    }
+
+    var currentCard = $('<div class="card col-12 my-1 px-1" style="width: 18rem;">');
+    var currentCardTitle = $(`<h5 class="card-title my-1">${moment().format('MMMM Do')}</h5>`);
+    var currentWeatherIcon = $(`<img src='http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png'></img>`)
 }
 
 function renderForecastConditions() {
