@@ -114,6 +114,15 @@ function getExtendedUVData(data) {
 }
 
 function renderCurrentConditions(data,curTemp,curHumidity,curWindSpd,cityName,curUVI) {
+    var normalMoment = moment();
+    console.log(normalMoment)
+
+    var utcMoment = moment.utc();
+    console.log(utcMoment)
+
+    // utcMomentZone = moment.utc().
+
+
     var cityNameTitle = $('#cityNameTitle')
     cityNameTitle.text(cityName);
 
@@ -134,9 +143,28 @@ function renderCurrentConditions(data,curTemp,curHumidity,curWindSpd,cityName,cu
 
     var curUVIEl = $('#curUVIEl');
     curUVIEl.text(`UV Index: ${curUVI}/10`)
+    if (curUVI<1) {
+        curUVIEl.text(`UV Index: ${curUVI}/10 (Very low)`)
+        curUVIEl.css('color','black')
+    } else if (curUVI < 3) {
+        curUVIEl.text(`UV Index: ${curUVI}/10 (Low)`)
+        curUVIEl.css('color','yellow')
+    } else if (curUVI < 6) {
+        curUVIEl.text(`UV Index: ${curUVI}/10 (Moderate)`)
+        curUVIEl.css('color','orange')
+    } else if (curUVI < 9) {
+        curUVIEl.text(`UV Index: ${curUVI}/10 (High)`)
+        curUVIEl.css('color','red')
+    } else if (curUVI > 9) {
+        curUVIEl.text(`UV Index: ${curUVI}/10 (Extreme)`)
+        curUVIEl.css('color','purple')
+    }
+    
 
     var currentConditionsContainer = $('#currentConditionsContainer');
     currentConditionsContainer.css('display','block')
+
+
 
 
 }
