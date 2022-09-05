@@ -17,9 +17,7 @@ main h2 {
     font-size: 12vmin
 }
 
-.uvIndexItem {
-    color: purple;
-}
+
 
 #currentConditionsContainer {
     display: none;
@@ -27,4 +25,32 @@ main h2 {
 
 #forecastConditionsContainer {
     display: none;
+}
+
+.vlow-UVI{
+    background-color: gray;
+    color: green;
+}
+
+.low-UVI{
+    background-color: gray;
+    color: yellow;
+}
+
+.mod-UVI {
+    background-color: gray;
+    color: orange;
+
+}
+
+.high-UVI {
+    background-color: gray;
+    color: red;
+
+}
+
+.extreme-UVI {
+    background-color: gray;
+    color: purple;
+
 }

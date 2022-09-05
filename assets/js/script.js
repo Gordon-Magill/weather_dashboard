@@ -98,7 +98,7 @@ function getExtendedUVData(data) {
     // Separate potentially paid API call just to get UVI...ugh...
     var lat = data.coord.lat;
     var lon = data.coord.lon;
-    var apiUrlLatLon = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`;
+    var apiUrlLatLon = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`;
     fetch(apiUrlLatLon)
         .then(function(response){
             return response.json()
@@ -114,15 +114,6 @@ function getExtendedUVData(data) {
 }
 
 function renderCurrentConditions(data,curTemp,curHumidity,curWindSpd,cityName,curUVI) {
-    var normalMoment = moment();
-    console.log(normalMoment)
-
-    var utcMoment = moment.utc();
-    console.log(utcMoment)
-
-    // utcMomentZone = moment.utc().
-
-
     var cityNameTitle = $('#cityNameTitle')
     cityNameTitle.text(cityName);
 
@@ -141,36 +132,56 @@ function renderCurrentConditions(data,curTemp,curHumidity,curWindSpd,cityName,cu
     var curWindEl = $('#curWindEl');
     curWindEl.text(`Wind speed: ${curWindSpd}m/s`)
 
+    // Set UVI text and style based on its level to indicate severity
     var curUVIEl = $('#curUVIEl');
     curUVIEl.text(`UV Index: ${curUVI}/10`)
     if (curUVI<1) {
         curUVIEl.text(`UV Index: ${curUVI}/10 (Very low)`)
-        curUVIEl.css('color','black')
+        curUVIEl.addClass('vlow-UVI')
     } else if (curUVI < 3) {
         curUVIEl.text(`UV Index: ${curUVI}/10 (Low)`)
-        curUVIEl.css('color','yellow')
+        curUVIEl.addClass('low-UVI')
     } else if (curUVI < 6) {
         curUVIEl.text(`UV Index: ${curUVI}/10 (Moderate)`)
-        curUVIEl.css('color','orange')
+        curUVIEl.addClass('mod-UVI')
     } else if (curUVI < 9) {
         curUVIEl.text(`UV Index: ${curUVI}/10 (High)`)
-        curUVIEl.css('color','red')
+        curUVIEl.addClass('high-UVI')
     } else if (curUVI > 9) {
         curUVIEl.text(`UV Index: ${curUVI}/10 (Extreme)`)
-        curUVIEl.css('color','purple')
+        curUVIEl.addClass('extreme-UVI')
     }
     
-
     var currentConditionsContainer = $('#currentConditionsContainer');
     currentConditionsContainer.css('display','block')
-
-
-
 
 }
 
 function renderForecastConditions(data) {
-    return;
+
+    // Loop through the indices of the forecast
+    for (i=0;i<5;i++) {
+        var currentMoment = moment().add(i+1,'days')
+        var curDateEl = $(`#dateEl${i}`)
+        curDateEl.text(currentMoment.format('MMMM Do'))
+    
+        var curIconEl = $(`#iconEl${i}`)
+        curIconEl.attr('src',`http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`)
+        
+        var curTemperatureEl = $(`#temperatureEl${i}`)
+        curTemperatureEl.text(`Temp(\u2103): ${data.daily[i].temp.day}(Day) / ${data.daily[i].temp.night}(Night)  `);
+    
+        var curHumidityEl = $(`#humidityEl${i}`);
+        curHumidityEl.text(`Humidity: ${data.daily[i].humidity}%`)
+    
+        var curWindEl = $(`#windEl${i}`);
+        curWindEl.text(`Wind speed: ${data.daily[i].wind_speed}m/s`)
+
+    }
+
+
+    var forecastConditionsContainer = $('#forecastConditionsContainer');
+    forecastConditionsContainer.css('display','block')
 }
 
 //API call for forecast conditions
