@@ -1,3 +1,7 @@
+:root {
+    --backgroundColor: rgb(226, 226, 226);
+}
+
 header {
     background-color: blue;
     color: white;
@@ -28,29 +32,30 @@ main h2 {
 }
 
 .vlow-UVI{
-    background-color: gray;
+    background-color: var(--backgroundColor);
     color: green;
 }
 
 .low-UVI{
-    background-color: gray;
+    background-color: var(--backgroundColor);
     color: yellow;
 }
 
 .mod-UVI {
-    background-color: gray;
+    background-color: var(--backgroundColor);
     color: orange;
 
 }
 
 .high-UVI {
-    background-color: gray;
-    color: red;
+    background-color: var(--backgroundColor);
+    color: rgb(255, 87, 87);
+    text-shadow: 0 0 10px 0 black,0 0 10px 0 black,0 0 10px 0 black,;
 
 }
 
 .extreme-UVI {
-    background-color: gray;
+    background-color: var(--backgroundColor);
     color: purple;
 
 }
