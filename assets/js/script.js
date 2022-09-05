@@ -1,10 +1,13 @@
+
+var WEATHER_API_KEY = 'b8628e5537299dd92c268cb43152d77d';
+
 // Event handler for city search
 var btnSearchCities = $('#btnSearchCities');
 var formSearchCities = $('#formSearchCities');
 
 btnSearchCities.on('click',function (event){
     event.preventDefault()
-    getCurrentConditions(formSearchCities.val())
+    getConditions(formSearchCities.val())
     // getForecastConditions(formSearchCities.val())
 })
 
@@ -45,39 +48,88 @@ function addCityCard(cityName) {
 }
 
 //API call for current conditions
-function getCurrentConditions(cityName) {
-    var weatherAPIKey = '81f2953a65aee813b28e36a32ee00ddb';
-    var apiUrlCityCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${weatherAPIKey}`;
+function getConditions(cityName) {
+    var lat = 51.5085; //London
+    var lon = -0.1257; //London
+    var part = 'hourly,daily'
+    var apiUrlCityCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${WEATHER_API_KEY}&units=metric`;
+    // var apiUrlCityCurrent = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&part=${part}`;
 
     fetch(apiUrlCityCurrent)
         .then(function(response){
+
             console.log('-----\nRetrieving current weather...\n-----')
+            console.log('Response:')
             console.log(response)
+            
             if (response.status === 200) {
-                var currentConditionsJSON = response.json()
-                console.log(currentConditionsJSON)
+
                 addCityCard(cityName)
+
             } else if (response.status === 404) {
+
                 console.log('Bad city name')
+
             }
 
+            return response.json()
+
         })
+        .then(function(data) {
+            
+            getExtendedUVData(data)
+            
+        })
+
+    
+}
+
+
+// Update page with current conditions
+function getExtendedUVData(data) {
+    console.log('Response JSON:')
+    console.log(data)
+    var curTemp = data.main.temp;
+    var curHumidity = data.main.humidity;
+    var curWindSpd = data.wind.speed;
+
+    // Separate potentially paid API call just to get UVI...ugh...
+    var lat = data.coord.lat;
+    var lon = data.coord.lon;
+    var apiUrlLatLon = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`;
+    fetch(apiUrlLatLon)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data)
+            var curUVI = data.current.uvi;
+        })
+
+}
+
+function renderCurrentConditions() {
+    return;
+}
+
+function renderForecastConditions() {
+    return;
 }
 
 //API call for forecast conditions
-function getForecastConditions(cityName) {
-    var weatherAPIKey = '81f2953a65aee813b28e36a32ee00ddb';
-    var apiUrlCityForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${weatherAPIKey}`;
+// function getForecastConditions(cityName) {
+//     var weatherAPIKey = 'b8628e5537299dd92c268cb43152d77d';
+//     var apiUrlCityForecast = `https://api.openweathermap.org/data/3.0/forecast?q=${cityName}&appid=${WEATHER_API_KEY}`;
 
-    fetch(apiUrlCityForecast)
-        .then(function(response){
-            console.log('-----\nRetrieving forecast weather...\n-----')
-            console.log(response)
-            var currentConditionsJSON = response.json()
-            console.log(currentConditionsJSON)
-        })
+//     fetch(apiUrlCityForecast)
+//         .then(function(response){
+//             console.log('-----\nRetrieving forecast weather...\n-----')
+//             console.log(response)
+//             var currentConditionsJSON = response.json()
+//             console.log(currentConditionsJSON)
+//         })
 
-}
+// }
 
 // Populate current conditions
 
