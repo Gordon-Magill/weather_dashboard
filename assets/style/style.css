@@ -20,3 +20,11 @@ main h2 {
 .uvIndexItem {
     color: purple;
 }
+
+#currentConditionsContainer {
+    display: none;
+}
+
+#forecastConditionsContainer {
+    display: none;
+}

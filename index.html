@@ -43,19 +43,19 @@
 
         <!-- Section for current conditions -->
         <section id="currentConditionsContainer">
-            <h2 class="text-center">Current forecast for <br><span id="cityNameTitle">Big City 1</span>:</h2>
+            <h2 class="text-center">Current conditions for <br><span id="cityNameTitle">Big City 1</span>:</h2>
             <div class="card col-12 my-1 px-1" style="width: 18rem;">
               
               <div class="card-body p-1">
-                <h5 class="card-title my-1">Septober 1st</h5>
-                <p class="card-text text-center">&#x26C5</p>
+                <h5 class="card-title my-1" id="curDateEl">Septober 1st</h5>
+                <img id="curIconEl"></img>
               </div>
 
               <ul class="list-group list-group-flush">
-                <li class="list-group-item p-1">Temperature: XXC</li>
-                <li class="list-group-item p-1">Humidity: YY%</li>
-                <li class="list-group-item p-1">Wind: Woosh</li>
-                <li class="list-group-item p-1 uvIndexItem" data-UV="low">UV Index: Burnin'</li>
+                <li class="list-group-item p-1" id="curTemperatureEl">Temperature: XXC</li>
+                <li class="list-group-item p-1" id="curHumidityEl">Humidity: YY%</li>
+                <li class="list-group-item p-1" id="curWindEl">Wind: Woosh</li>
+                <li class="list-group-item p-1 uvIndexItem" id="curUVIEl">UV Index: Burnin'</li>
               </ul>
 
           </div>
@@ -63,7 +63,7 @@
         </section>
 
         <!-- Section for 5-day forecast -->
-        <section class="container">
+        <section class="container" id="forecastConditionsContainer">
             <h2 class="mt-2">5 day forecast:</h2>
             <!-- Container for forecast cards -->
             <section class="row">
@@ -72,33 +72,82 @@
               <div class="card col-12 my-1 px-1" style="width: 18rem;">
 
                 <div class="card-body p-1">
-                  <h5 class="card-title">Septober 1st</h5>
-                  <p class="card-text text-center">&#x26C5</p>
+                  <h5 class="card-title" id="DateEl0">Septober 1st</h5>
+                  <img id="iconEl0"></img>
                 </div>
 
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item p-1">Temperature: XXC</li>
-                  <li class="list-group-item p-1">Humidity: YY%</li>
-                  <li class="list-group-item p-1">Wind: Woosh</li>
+                  <li class="list-group-item p-1" id="curTemperatureEl0">Temperature: XXC</li>
+                  <li class="list-group-item p-1" id="curHumidityEl0">Humidity: YY%</li>
+                  <li class="list-group-item p-1" id="curWindEl0">Wind: Woosh</li>
                 </ul>
                 
               </div>
 
+              <!-- Day +2 -->
               <div class="card col-12 my-1 px-1" style="width: 18rem;">
 
                 <div class="card-body p-1">
-                  <h5 class="card-title">Septober 1st</h5>
-                  <p class="card-text">&#x26C5</p>
+                  <h5 class="card-title" id="DateEl1">Septober 1st</h5>
+                  <img id="iconEl1"></img>
                 </div>
 
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item p-1">Temperature: XXC</li>
-                  <li class="list-group-item p-1">Humidity: YY%</li>
-                  <li class="list-group-item p-1">Wind: Woosh</li>
+                  <li class="list-group-item p-1" id="curTemperatureEl1">Temperature: XXC</li>
+                  <li class="list-group-item p-1" id="curHumidityEl1">Humidity: YY%</li>
+                  <li class="list-group-item p-1" id="curWindEl1">Wind: Woosh</li>
                 </ul>
-
+                
               </div>
 
+              <!-- Day +3 -->
+              <div class="card col-12 my-1 px-1" style="width: 18rem;">
+
+                <div class="card-body p-1">
+                  <h5 class="card-title" id="DateEl2">Septober 1st</h5>
+                  <img id="iconEl2"></img>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item p-1" id="curTemperatureEl2">Temperature: XXC</li>
+                  <li class="list-group-item p-1" id="curHumidityEl2">Humidity: YY%</li>
+                  <li class="list-group-item p-1" id="curWindEl2">Wind: Woosh</li>
+                </ul>
+                
+              </div>
+
+              <!-- Day +4 -->
+              <div class="card col-12 my-1 px-1" style="width: 18rem;">
+
+                <div class="card-body p-1">
+                  <h5 class="card-title" id="DateEl3">Septober 1st</h5>
+                  <img id="iconEl3"></img>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item p-1" id="curTemperatureEl3">Temperature: XXC</li>
+                  <li class="list-group-item p-1" id="curHumidityEl3">Humidity: YY%</li>
+                  <li class="list-group-item p-1" id="curWindEl3">Wind: Woosh</li>
+                </ul>
+                
+              </div>
+
+              <!-- Day +5 -->
+              <div class="card col-12 my-1 px-1" style="width: 18rem;">
+
+                <div class="card-body p-1">
+                  <h5 class="card-title" id="DateEl4">Septober 1st</h5>
+                  <img id="iconEl4"></img>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item p-1" id="curTemperatureEl4">Temperature: XXC</li>
+                  <li class="list-group-item p-1" id="curHumidityEl4">Humidity: YY%</li>
+                  <li class="list-group-item p-1" id="curWindEl4">Wind: Woosh</li>
+                </ul>
+                
+              </div>
+              
 
             </section>
         </section>

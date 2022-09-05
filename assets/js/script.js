@@ -107,29 +107,41 @@ function getExtendedUVData(data) {
             console.log(data)
             var curUVI = data.current.uvi;
 
-            renderCurrentConditions()
-            renderForecastConditions()
+            renderCurrentConditions(data,curTemp,curHumidity,curWindSpd,cityName,curUVI)
+            renderForecastConditions(data)
         })
 
 }
 
-function renderCurrentConditions() {
-    var currentConditionsContainer = $('<section id="currentConditionsContainer">')
+function renderCurrentConditions(data,curTemp,curHumidity,curWindSpd,cityName,curUVI) {
+    var cityNameTitle = $('#cityNameTitle')
+    cityNameTitle.text(cityName);
+
+    var curDateEl = $('#curDateEl')
+    curDateEl.text(moment().format('MMMM Do'))
+
+    var curIconEl = $('#curIconEl')
+    curIconEl.attr('src',)
     
-    var currentConditionsTitle = $('<h2>');
-    currentConditionsTitle.text(`Current forecast for ${cityName}:`);
-    currentConditionsContainer.append(currentConditionsTitle);
+    var curTemperatureEl = $('#curTemperatureEl')
+    curTemperatureEl.text(`Temperature: ${curTemp}\u2103`);
 
-    function weatherToUnicode() {
+    var curHumidityEl = $('#curHumidityEl');
+    curHumidityEl.text(`Humidity: ${curHumidity}%`)
 
-    }
+    var curWindEl = $('#curWindEl');
+    curWindEl.text(`Wind speed: ${curWindSpd}m/s`)
 
-    var currentCard = $('<div class="card col-12 my-1 px-1" style="width: 18rem;">');
-    var currentCardTitle = $(`<h5 class="card-title my-1">${moment().format('MMMM Do')}</h5>`);
-    var currentWeatherIcon = $(`<img src='http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png'></img>`)
+    var curUVIEl = $('#curUVIEl');
+    curUVIEl.text(`UV Index: ${curUVI}/10`)
+
+    var currentConditionsContainer = $('#currentConditionsContainer');
+    currentConditionsContainer.css('display','block')
+
+
 }
 
-function renderForecastConditions() {
+function renderForecastConditions(data) {
     return;
 }
 
