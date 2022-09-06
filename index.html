@@ -18,22 +18,22 @@
 <body>
 
   <!-- Header content -->
-  <header class="container">
+  <header class="container-fluid">
     <section class="row">
-      <h1 class="col-12">Weather Dashboard</h1>
+      <h1 class="col-12">Conditions & Forecast</h1>
     </section>
   </header>
 
-  <!-- Body container -->
-  <main class="container">
+  <!-- Main container -->
+  <main class="container-fluid custom-container">
 
-    <section class="row">
+    <section class="row d-flex flex-nowrap">
 
       <!-- Section for search bar and saved cities on the left -->
       <section class="col-4 d-flex flex-column align-items-center px-1" id="leftBarContainer">
 
         <input type="text" placeholder="Search by city name" class="my-1" id="formSearchCities">
-        <input type="submit" id="btnSearchCities" class="my-1" value="Search">
+        <input type="submit" id="btnSearchCities" class="my-1">
         <hr class="my-2">
 
       </section>
@@ -42,9 +42,9 @@
       <section class="col-8 column px-1" id="resultsContainer">
 
         <!-- Section for current conditions -->
-        <section id="currentConditionsContainer">
-            <h2 class="text-center">Current conditions for <br><span id="cityNameTitle">Big City 1</span>:</h2>
-            <div class="card col-12 my-1 px-1" style="width: 18rem;">
+        <section id="currentConditionsContainer" class="d-flex flex-column align-items-center">
+            <h2 class="text-center"><span id="cityNameTitle">Big City 1</span>:</h2>
+            <div class="card custom-card custom-card my-1 px-1" style="width: 18rem;">
               
               <div class="card-body p-1">
                 <h5 class="card-title my-1" id="curDateEl">Septober 1st</h5>
@@ -63,93 +63,88 @@
         </section>
 
         <!-- Section for 5-day forecast -->
-        <section class="container" id="forecastConditionsContainer">
-            <h2 class="mt-2">5 day forecast:</h2>
-            <!-- Container for forecast cards -->
-            <section class="row">
+        <section class="d-flex flex-row justify-content-around flex-wrap" id="forecastConditionsContainer">
 
               <!-- Day +1 -->
-              <div class="card col-12 my-1 px-1" style="width: 18rem;">
+            <div class="card custom-card my-1 px-1" style="width: 18rem;">
 
-                <div class="card-body p-1">
-                  <h5 class="card-title" id="dateEl0">Septober 1st</h5>
-                  <img id="iconEl0"></img>
-                </div>
-
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item p-1" id="temperatureEl0">Temperature: XXC</li>
-                  <li class="list-group-item p-1" id="humidityEl0">Humidity: YY%</li>
-                  <li class="list-group-item p-1" id="windEl0">Wind: Woosh</li>
-                </ul>
-                
+              <div class="card-body p-1">
+                <h5 class="card-title" id="dateEl0">Septober 1st</h5>
+                <img id="iconEl0"></img>
               </div>
 
-              <!-- Day +2 -->
-              <div class="card col-12 my-1 px-1" style="width: 18rem;">
-
-                <div class="card-body p-1">
-                  <h5 class="card-title" id="dateEl1">Septober 1st</h5>
-                  <img id="iconEl1"></img>
-                </div>
-
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item p-1" id="temperatureEl1">Temperature: XXC</li>
-                  <li class="list-group-item p-1" id="humidityEl1">Humidity: YY%</li>
-                  <li class="list-group-item p-1" id="windEl1">Wind: Woosh</li>
-                </ul>
-                
-              </div>
-
-              <!-- Day +3 -->
-              <div class="card col-12 my-1 px-1" style="width: 18rem;">
-
-                <div class="card-body p-1">
-                  <h5 class="card-title" id="dateEl2">Septober 1st</h5>
-                  <img id="iconEl2"></img>
-                </div>
-
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item p-1" id="temperatureEl2">Temperature: XXC</li>
-                  <li class="list-group-item p-1" id="humidityEl2">Humidity: YY%</li>
-                  <li class="list-group-item p-1" id="windEl2">Wind: Woosh</li>
-                </ul>
-                
-              </div>
-
-              <!-- Day +4 -->
-              <div class="card col-12 my-1 px-1" style="width: 18rem;">
-
-                <div class="card-body p-1">
-                  <h5 class="card-title" id="dateEl3">Septober 1st</h5>
-                  <img id="iconEl3"></img>
-                </div>
-
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item p-1" id="temperatureEl3">Temperature: XXC</li>
-                  <li class="list-group-item p-1" id="humidityEl3">Humidity: YY%</li>
-                  <li class="list-group-item p-1" id="windEl3">Wind: Woosh</li>
-                </ul>
-                
-              </div>
-
-              <!-- Day +5 -->
-              <div class="card col-12 my-1 px-1" style="width: 18rem;">
-
-                <div class="card-body p-1">
-                  <h5 class="card-title" id="dateEl4">Septober 1st</h5>
-                  <img id="iconEl4"></img>
-                </div>
-
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item p-1" id="temperatureEl4">Temperature: XXC</li>
-                  <li class="list-group-item p-1" id="humidityEl4">Humidity: YY%</li>
-                  <li class="list-group-item p-1" id="windEl4">Wind: Woosh</li>
-                </ul>
-                
-              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item p-1" id="temperatureEl0">Temperature: XXC</li>
+                <li class="list-group-item p-1" id="humidityEl0">Humidity: YY%</li>
+                <li class="list-group-item p-1" id="windEl0">Wind: Woosh</li>
+              </ul>
               
+            </div>
 
-            </section>
+            <!-- Day +2 -->
+            <div class="card custom-card my-1 px-1" style="width: 18rem;">
+
+              <div class="card-body p-1">
+                <h5 class="card-title" id="dateEl1">Septober 1st</h5>
+                <img id="iconEl1"></img>
+              </div>
+
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item p-1" id="temperatureEl1">Temperature: XXC</li>
+                <li class="list-group-item p-1" id="humidityEl1">Humidity: YY%</li>
+                <li class="list-group-item p-1" id="windEl1">Wind: Woosh</li>
+              </ul>
+              
+            </div>
+
+            <!-- Day +3 -->
+            <div class="card custom-card my-1 px-1" style="width: 18rem;">
+
+              <div class="card-body p-1">
+                <h5 class="card-title" id="dateEl2">Septober 1st</h5>
+                <img id="iconEl2"></img>
+              </div>
+
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item p-1" id="temperatureEl2">Temperature: XXC</li>
+                <li class="list-group-item p-1" id="humidityEl2">Humidity: YY%</li>
+                <li class="list-group-item p-1" id="windEl2">Wind: Woosh</li>
+              </ul>
+              
+            </div>
+
+            <!-- Day +4 -->
+            <div class="card custom-card my-1 px-1" style="width: 18rem;">
+
+              <div class="card-body p-1">
+                <h5 class="card-title" id="dateEl3">Septober 1st</h5>
+                <img id="iconEl3"></img>
+              </div>
+
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item p-1" id="temperatureEl3">Temperature: XXC</li>
+                <li class="list-group-item p-1" id="humidityEl3">Humidity: YY%</li>
+                <li class="list-group-item p-1" id="windEl3">Wind: Woosh</li>
+              </ul>
+              
+            </div>
+
+            <!-- Day +5 -->
+            <div class="card custom-card my-1 px-1" style="width: 18rem;">
+
+              <div class="card-body p-1">
+                <h5 class="card-title" id="dateEl4">Septober 1st</h5>
+                <img id="iconEl4"></img>
+              </div>
+
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item p-1" id="temperatureEl4">Temperature: XXC</li>
+                <li class="list-group-item p-1" id="humidityEl4">Humidity: YY%</li>
+                <li class="list-group-item p-1" id="windEl4">Wind: Woosh</li>
+              </ul>
+              
+            </div>
+              
         </section>
 
       </section>

@@ -123,7 +123,7 @@ function renderCurrentConditions(data,curTemp,curHumidity,curWindSpd,cityName,cu
     cityNameTitle.text(cityName);
 
     var curDateEl = $('#curDateEl')
-    curDateEl.text(moment().format('MMMM Do'))
+    curDateEl.text(moment().format('MMMM Do')+'\n(Current conditions)')
 
     var curIconEl = $('#curIconEl')
     curIconEl.attr('src',`http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`)
