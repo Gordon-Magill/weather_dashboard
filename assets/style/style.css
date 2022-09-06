@@ -1,76 +1,76 @@
 :root {
-    --backgroundColor: rgb(226, 226, 226);
+  --backgroundColor: rgb(226, 226, 226);
 }
 
 header {
-    background-image: linear-gradient(to right, rgb(0, 76, 255) , rgb(0, 255, 115));    color: white;
-    text-align: center;
-    text-shadow: 0px 0px 3px black,0px 0px 6px black,0px 0px 10px black;
-
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 76, 255),
+    rgb(0, 255, 115)
+  );
+  color: white;
+  text-align: center;
+  text-shadow: 0px 0px 3px black, 0px 0px 6px black, 0px 0px 10px black;
 }
 
 body {
-    background-color:rgb(50, 50, 50)
+  background-color: rgb(50, 50, 50);
 }
 
 main h2 {
-    font-size: 6vmin;
+  font-size: 6vmin;
 }
 
 .card-body {
-    font-size: 4vmin;
-    text-align: center;
-
+  font-size: 4vmin;
+  text-align: center;
 }
 
 .card-text {
-    font-size: 12vmin
+  font-size: 12vmin;
 }
 
-.vlow-UVI{
-    background-color: var(--backgroundColor);
-    color: green;
+.vlow-UVI {
+  background-color: var(--backgroundColor);
+  color: green;
 }
 
-.low-UVI{
-    background-color: var(--backgroundColor);
-    color: yellow;
+.low-UVI {
+  background-color: var(--backgroundColor);
+  color: yellow;
 }
 
 .mod-UVI {
-    background-color: var(--backgroundColor);
-    color: orange;
-
+  background-color: var(--backgroundColor);
+  color: orange;
 }
 
 .high-UVI {
-    background-color: var(--backgroundColor);
-    color: rgb(255, 87, 87);
-    text-shadow: 0 0 10px 0 black,0 0 10px 0 black,0 0 10px 0 black,;
-
+  background-color: var(--backgroundColor);
+  color: rgb(255, 87, 87);
+  text-shadow: 0 0 10px 0 black, 0 0 10px 0 black, 0 0 10px 0 black;
 }
 
 .extreme-UVI {
-    background-color: var(--backgroundColor);
-    color: purple;
-
+  background-color: var(--backgroundColor);
+  color: purple;
 }
 
 .hoverShadow:hover {
-    box-shadow: 0 0 10px 0 rgb(50, 50, 50);
-    transition: all 0.15s ease-in-out;
-    filter: none;
-    cursor: pointer;
+  box-shadow: 0 0 10px 0 rgb(50, 50, 50);
+  transition: all 0.15s ease-in-out;
+  filter: none;
+  cursor: pointer;
 }
 
 .custom-card {
-max-width: 180px;
+  max-width: 180px;
 }
 
 input {
-width: 100%;
-max-width: 200px;
-font-size: 12px;
+  width: 100%;
+  max-width: 200px;
+  font-size: 12px;
 }
 
 /* .custom-container {
@@ -78,35 +78,43 @@ width: 10%;
 } */
 
 .cityCard {
-font-size: 16px
+  font-size: 16px;
 }
 
 .customLeftArea {
-border: 2px solid black;
-border-radius: 25px;
-margin: 5px;
-height: fit-content;
-min-height: 80vh;
-padding: 10px;
-background-color: blanchedalmond;
-background-image: linear-gradient(to bottom right, rgb(255, 255, 190), rgb(255, 255, 255));
+  border: 2px solid black;
+  border-radius: 25px;
+  margin: 5px;
+  height: fit-content;
+  min-height: 80vh;
+  padding: 10px;
+  background-color: blanchedalmond;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(255, 255, 190),
+    rgb(255, 255, 255)
+  );
 }
 
 .customRightArea {
-display:none;
-border: 2px solid black;
-border-radius: 25px;
-padding-top: 10px;
-margin: 5px;
-width: 100%;
-background-image: linear-gradient(to bottom right, rgb(255, 255, 190), rgb(255, 255, 255));
+  display: none;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding-top: 10px;
+  margin: 5px;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(255, 255, 190),
+    rgb(255, 255, 255)
+  );
 }
 
 .searchStyling {
-font-weight: bolder;
+  font-weight: bolder;
 }
 
 footer {
-    text-align: center;
-    color: white;
+  text-align: center;
+  color: white;
 }
