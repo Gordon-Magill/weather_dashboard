@@ -75,6 +75,7 @@ function getConditions(cityName) {
             
             if (response.status === 200) {
 
+                $('.customRightArea').css('display','block');
                 addCityCard(cityName)
 
             } else if (response.status === 404) {
