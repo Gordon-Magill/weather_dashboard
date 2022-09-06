@@ -34,7 +34,7 @@ function addCityCard(cityName) {
 
     // Create bootstrap card
     var newCityCard = $('<div>')
-    newCityCard.addClass('card my-1')
+    newCityCard.addClass('card my-1 ')
     newCityCard.attr('id',cityName)
     newCityCard.addClass('hoverShadow')
     newCityCard.on('click',function (event){
@@ -44,7 +44,7 @@ function addCityCard(cityName) {
 
     // Create bootstrap card body
     var newCityBody = $('<div>')
-    newCityBody.addClass('card-body p-1')
+    newCityBody.addClass('card-body p-1 cityCard')
     newCityBody.text(cityName)
 
     // Append elements to render new card
@@ -140,8 +140,10 @@ function renderCurrentConditions(data,curTemp,curHumidity,curWindSpd,cityName,cu
     // Set UVI text and style based on its level to indicate severity
     var curUVIEl = $('#curUVIEl');
     curUVIEl.text(`UV Index: ${curUVI}/10`)
+    curUVIEl.removeClass('vlow-UVI low-UVI mod-UVI high-UVI extreme-UVI');
     if (curUVI<1) {
         curUVIEl.text(`UV Index: ${curUVI}/10 (Very low)`)
+        curUVIEl.removeClass('vlow-UVI low-UVI mod-UVI high-UVI extreme-UVI');
         curUVIEl.addClass('vlow-UVI')
     } else if (curUVI < 3) {
         curUVIEl.text(`UV Index: ${curUVI}/10 (Low)`)
