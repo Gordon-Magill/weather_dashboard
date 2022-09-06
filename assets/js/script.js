@@ -17,26 +17,56 @@ btnSearchCities.on('click',function (event){
     // getForecastConditions(formSearchCities.val())
 })
 
-// Add city card to city list on left of screen
+// Populate the city list on the left of the screen with cities stored in localStorage
 var leftBarContainer = $('#leftBarContainer');
-var cityList =[];
-
-function addCityCard(cityName) {
-
-    console.log('Triggered addCityCard')
-
-    // If the city card already exists, do nothing
-    for (i=0;i<cityList.length;i++) {
-        if (cityList[i]=== cityName) {
-            console.log(`${cityName} card already exists, stopping card creation.`)
-            return;
+var cityList = JSON.parse(localStorage.getItem('cityList')) || [];
+function populateSearchHistory() {
+    // console.log('Creating city list on the left based on:');
+    // console.log(cityList)
+    // console.log(cityList.length)
+    if (cityList.length > 0) {
+        for (j=0;j < cityList.length; j++){
+            // console.log('Entering loop '+j);
+            addCityCard(cityList[j],true);
+            // console.log('Exiting loop '+j)
         }
     }
+    
+}
+populateSearchHistory()
+
+// Add city card to city list on left of screen
+function addCityCard(cityName,forceCreate) {
+
+    // console.log('Triggered addCityCard')
+
+ 
+        // If the city card already exists, do nothing
+        for (i=0;i<cityList.length;i++) {
+            if (cityList[i] === cityName && !forceCreate) {
+                // Unless prompted, cause this to abort the card adding process
+                console.log(`${cityName} card already exists, stopping card creation.`)
+                return;
+            }
+        }
+    
+
 
     // If it's a new city, add a card for it
     // Update city list
-    console.log(`Creating city card for ${cityName}`)
-    cityList.push(cityName);
+    // console.log(`Creating city card for ${cityName}`)
+
+    var cityNameFlag = true;
+    for (i=0;i<cityList.length;i++) {
+        if (cityList[i] == cityName) {
+            cityNameFlag = false;
+        }
+    }
+
+    if (cityNameFlag) {
+        cityList.push(cityName);
+    }
+
 
     // Create bootstrap card
     var newCityCard = $('<div>')
@@ -56,6 +86,8 @@ function addCityCard(cityName) {
     // Append elements to render new card
     newCityCard.append(newCityBody);
     leftBarContainer.append(newCityCard);
+    localStorage.setItem('cityList',JSON.stringify(cityList));
+    // console.log('Finished making card for '+cityName)
 }
 
 //API call for current conditions
@@ -76,7 +108,7 @@ function getConditions(cityName) {
             if (response.status === 200) {
 
                 $('.customRightArea').css('display','block');
-                addCityCard(cityName)
+                addCityCard(cityName, false)
 
             } else if (response.status === 404) {
 
