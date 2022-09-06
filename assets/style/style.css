@@ -23,13 +23,13 @@ main h2 {
 
 
 
-#currentConditionsContainer {
+/* #currentConditionsContainer {
     display: none;
 }
 
 #forecastConditionsContainer {
     display: none;
-}
+} */
 
 .vlow-UVI{
     background-color: var(--backgroundColor);
