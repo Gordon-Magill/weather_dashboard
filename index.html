@@ -24,13 +24,15 @@
     </section>
   </header>
 
-  <!-- Main container -->
+  <!-- Main bootstrap container -->
   <main class="container-fluid custom-container">
 
+    <!-- Huge row section that effectively encompasses the main content of the page -->
     <section class="row d-flex flex-nowrap">
 
       <!-- Section for search bar and saved cities on the left -->
       <section class="col-4 d-flex flex-column align-items-center px-1 customLeftArea" id="leftBarContainer">
+
         <p class="searchStyling">City search:</p>
         <input type="text" placeholder="City Name" class="my-1" id="formSearchCities">
         <input type="submit" id="btnSearchCities" class="my-1">
@@ -41,21 +43,23 @@
       <!-- Section for results on the right -->
       <section class="px-1 customRightArea" id="resultsContainer">
 
-        <!-- Section for current conditions -->
+        <!-- Section for current conditions-->
         <section id="currentConditionsContainer" class="d-flex flex-column align-items-center">
-            <h2 class="text-center"><span id="cityNameTitle">Big City 1</span>:</h2>
+            <h2 class="text-center"><span id="cityNameTitle"></span>:</h2>
+
+            <!-- Bootstrap card -->
             <div class="card custom-card custom-card my-3 px-1" style="width: 18rem;">
               
               <div class="card-body p-1">
-                <h5 class="card-title my-1" id="curDateEl">Septober 1st</h5>
+                <h5 class="card-title my-1" id="curDateEl"></h5>
                 <img id="curIconEl"></img>
               </div>
 
               <ul class="list-group list-group-flush">
-                <li class="list-group-item p-1" id="curTemperatureEl">Temperature: XXC</li>
-                <li class="list-group-item p-1" id="curHumidityEl">Humidity: YY%</li>
-                <li class="list-group-item p-1" id="curWindEl">Wind: Woosh</li>
-                <li class="list-group-item p-1" id="curUVIEl">UV Index: Burnin'</li>
+                <li class="list-group-item p-1" id="curTemperatureEl"></li>
+                <li class="list-group-item p-1" id="curHumidityEl"></li>
+                <li class="list-group-item p-1" id="curWindEl"></li>
+                <li class="list-group-item p-1" id="curUVIEl"></li>
               </ul>
 
           </div>
@@ -65,82 +69,88 @@
         <!-- Section for 5-day forecast -->
         <section class="d-flex flex-row justify-content-around flex-wrap" id="forecastConditionsContainer">
 
-              <!-- Day +1 -->
+              <!-- Day +1 forecast-->
+              <!-- Bootstrap card -->
             <div class="card custom-card my-2 px-1" style="width: 18rem;">
 
               <div class="card-body p-1">
-                <h5 class="card-title" id="dateEl0">Septober 1st</h5>
+                <h5 class="card-title" id="dateEl0"></h5>
                 <img id="iconEl0"></img>
               </div>
 
               <ul class="list-group list-group-flush">
-                <li class="list-group-item p-1" id="temperatureEl0">Temperature: XXC</li>
-                <li class="list-group-item p-1" id="humidityEl0">Humidity: YY%</li>
-                <li class="list-group-item p-1" id="windEl0">Wind: Woosh</li>
+                <li class="list-group-item p-1" id="temperatureEl0"></li>
+                <li class="list-group-item p-1" id="humidityEl0"></li>
+                <li class="list-group-item p-1" id="windEl0"></li>
               </ul>
               
             </div>
 
-            <!-- Day +2 -->
+            <!-- Day +2 forecast-->
+            <!-- Bootstrap card -->
+
             <div class="card custom-card my-2 px-1" style="width: 18rem;">
 
               <div class="card-body p-1">
-                <h5 class="card-title" id="dateEl1">Septober 1st</h5>
+                <h5 class="card-title" id="dateEl1"></h5>
                 <img id="iconEl1"></img>
               </div>
 
               <ul class="list-group list-group-flush">
-                <li class="list-group-item p-1" id="temperatureEl1">Temperature: XXC</li>
-                <li class="list-group-item p-1" id="humidityEl1">Humidity: YY%</li>
-                <li class="list-group-item p-1" id="windEl1">Wind: Woosh</li>
+                <li class="list-group-item p-1" id="temperatureEl1"></li>
+                <li class="list-group-item p-1" id="humidityEl1"></li>
+                <li class="list-group-item p-1" id="windEl1"></li>
               </ul>
               
             </div>
 
-            <!-- Day +3 -->
+            <!-- Day +3 forecast-->
+            <!-- Bootstrap card -->
             <div class="card custom-card my-2 px-1" style="width: 18rem;">
 
               <div class="card-body p-1">
-                <h5 class="card-title" id="dateEl2">Septober 1st</h5>
+                <h5 class="card-title" id="dateEl2"></h5>
                 <img id="iconEl2"></img>
               </div>
 
               <ul class="list-group list-group-flush">
-                <li class="list-group-item p-1" id="temperatureEl2">Temperature: XXC</li>
-                <li class="list-group-item p-1" id="humidityEl2">Humidity: YY%</li>
-                <li class="list-group-item p-1" id="windEl2">Wind: Woosh</li>
+                <li class="list-group-item p-1" id="temperatureEl2"></li>
+                <li class="list-group-item p-1" id="humidityEl2"></li>
+                <li class="list-group-item p-1" id="windEl2"></li>
               </ul>
               
             </div>
 
-            <!-- Day +4 -->
+            <!-- Day +4 forecast-->
+            <!-- Bootstrap card -->
             <div class="card custom-card my-2 px-1" style="width: 18rem;">
 
               <div class="card-body p-1">
-                <h5 class="card-title" id="dateEl3">Septober 1st</h5>
+                <h5 class="card-title" id="dateEl3"></h5>
                 <img id="iconEl3"></img>
               </div>
 
               <ul class="list-group list-group-flush">
-                <li class="list-group-item p-1" id="temperatureEl3">Temperature: XXC</li>
-                <li class="list-group-item p-1" id="humidityEl3">Humidity: YY%</li>
-                <li class="list-group-item p-1" id="windEl3">Wind: Woosh</li>
+                <li class="list-group-item p-1" id="temperatureEl3"></li>
+                <li class="list-group-item p-1" id="humidityEl3"></li>
+                <li class="list-group-item p-1" id="windEl3"></li>
               </ul>
               
             </div>
 
-            <!-- Day +5 -->
+            <!-- Day +5 forecast-->
+            <!-- Bootstrap card -->
             <div class="card custom-card my-2 px-1" style="width: 18rem;">
 
               <div class="card-body p-1">
-                <h5 class="card-title" id="dateEl4">Septober 1st</h5>
+                <h5 class="card-title" id="dateEl4"></h5>
                 <img id="iconEl4"></img>
               </div>
 
               <ul class="list-group list-group-flush">
-                <li class="list-group-item p-1" id="temperatureEl4">Temperature: XXC</li>
-                <li class="list-group-item p-1" id="humidityEl4">Humidity: YY%</li>
-                <li class="list-group-item p-1" id="windEl4">Wind: Woosh</li>
+                <li class="list-group-item p-1" id="temperatureEl4"></li>
+                <li class="list-group-item p-1" id="humidityEl4"></li>
+                <li class="list-group-item p-1" id="windEl4"></li>
               </ul>
               
             </div>
@@ -151,20 +161,18 @@
 
     </section>
 
-
   </main>
 
+  <!-- Basic footer -->
   <footer>&copy Gordon Magill 2022</footer>
 
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+  <!-- Moment -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Moment -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
-    <!-- Custom JS -->
-    <script src="./assets/js/script.js"></script>
+  <!-- Custom JS -->
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>

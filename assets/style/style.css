@@ -2,6 +2,7 @@
   --backgroundColor: rgb(226, 226, 226);
 }
 
+/* Aesthetically pleasing header */
 header {
   background-image: linear-gradient(
     to right,
@@ -10,26 +11,38 @@ header {
   );
   color: white;
   text-align: center;
+
+  /* Text shadow to make the white text pop */
   text-shadow: 0px 0px 3px black, 0px 0px 6px black, 0px 0px 10px black;
 }
 
+/* Dark page background */
 body {
   background-color: rgb(50, 50, 50);
 }
 
+/* Resizable headers */
 main h2 {
   font-size: 6vmin;
 }
 
+/* Overriding bootstrap default card body behavior */
 .card-body {
-  font-size: 4vmin;
+  font-size: 16px;
   text-align: center;
 }
 
+.custom-card-body {
+  background-color: rgb(0, 149, 255);
+  color: white;
+}
+
+/* Overriding bootstrap default card text behavior */
 .card-text {
   font-size: 12vmin;
 }
 
+/* Set of classes for styling the UVI element based on the UVI value */
 .vlow-UVI {
   background-color: var(--backgroundColor);
   color: green;
@@ -56,6 +69,7 @@ main h2 {
   color: purple;
 }
 
+/* Highlighting of the functionality of buttons */
 .hoverShadow:hover {
   box-shadow: 0 0 10px 0 rgb(50, 50, 50);
   transition: all 0.15s ease-in-out;
@@ -63,24 +77,19 @@ main h2 {
   cursor: pointer;
 }
 
+/* Forcing max width of card elements that show forecast info to improve responsiveness */
 .custom-card {
   max-width: 180px;
 }
 
+/* Styles both the search button and the search field */
 input {
   width: 100%;
   max-width: 200px;
   font-size: 12px;
 }
 
-/* .custom-container {
-width: 10%;
-} */
-
-.cityCard {
-  font-size: 16px;
-}
-
+/* Styling for the large area on the left of the page that houses the search bar and search history */
 .customLeftArea {
   border: 2px solid black;
   border-radius: 25px;
@@ -96,8 +105,11 @@ width: 10%;
   );
 }
 
+/* Styling for the large area on the right of the page that houses the condition and forecast cards */
 .customRightArea {
+  /* Start the area off transparent*/
   display: none;
+
   border: 2px solid black;
   border-radius: 25px;
   padding-top: 10px;
@@ -110,10 +122,12 @@ width: 10%;
   );
 }
 
+/* Solely styles the text above the search bar */
 .searchStyling {
   font-weight: bolder;
 }
 
+/* Covers copyright info at bottom of page */
 footer {
   text-align: center;
   color: white;
