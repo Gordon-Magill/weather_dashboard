@@ -7,6 +7,10 @@ header {
     color: white;
 }
 
+body {
+    background-color:rgb(50, 50, 50)
+}
+
 main h2 {
     font-size: 6vmin;
 }
@@ -20,16 +24,6 @@ main h2 {
 .card-text {
     font-size: 12vmin
 }
-
-
-
-/* #currentConditionsContainer {
-    display: none;
-}
-
-#forecastConditionsContainer {
-    display: none;
-} */
 
 .vlow-UVI{
     background-color: var(--backgroundColor);
@@ -72,7 +66,9 @@ main h2 {
   }
 
   input {
-    max-width: 32vw;
+    width: 100%;
+    max-width: 200px;
+    font-size: 12px;
   }
 
   /* .custom-container {
@@ -81,4 +77,28 @@ main h2 {
 
   .cityCard {
     font-size: 16px
+  }
+
+  .customLeftArea {
+    border: 2px solid black;
+    border-radius: 25px;
+    margin: 5px;
+    height: 85vh;
+    padding: 10px;
+    background-color: blanchedalmond;
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 190), rgb(255, 255, 255));
+  }
+
+  .customRightArea {
+    /* display:none; */
+    border: 2px solid black;
+    border-radius: 25px;
+    padding-top: 10px;
+    margin: 5px;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 190), rgb(255, 255, 255));
+  }
+
+  .searchStyling {
+    font-weight: bolder;
   }

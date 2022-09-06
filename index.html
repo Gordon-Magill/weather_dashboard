@@ -30,21 +30,21 @@
     <section class="row d-flex flex-nowrap">
 
       <!-- Section for search bar and saved cities on the left -->
-      <section class="col-4 d-flex flex-column align-items-center px-1" id="leftBarContainer">
-
-        <input type="text" placeholder="Search by city name" class="my-1" id="formSearchCities">
+      <section class="col-4 d-flex flex-column align-items-center px-1 customLeftArea" id="leftBarContainer">
+        <p class="searchStyling">City search:</p>
+        <input type="text" placeholder="City,State,Country" class="my-1" id="formSearchCities">
         <input type="submit" id="btnSearchCities" class="my-1">
         <hr class="my-2">
 
       </section>
 
       <!-- Section for results on the right -->
-      <section class="col-8 column px-1" id="resultsContainer">
+      <section class="px-1 customRightArea" id="resultsContainer">
 
         <!-- Section for current conditions -->
         <section id="currentConditionsContainer" class="d-flex flex-column align-items-center">
             <h2 class="text-center"><span id="cityNameTitle">Big City 1</span>:</h2>
-            <div class="card custom-card custom-card my-1 px-1" style="width: 18rem;">
+            <div class="card custom-card custom-card my-3 px-1" style="width: 18rem;">
               
               <div class="card-body p-1">
                 <h5 class="card-title my-1" id="curDateEl">Septober 1st</h5>
@@ -66,7 +66,7 @@
         <section class="d-flex flex-row justify-content-around flex-wrap" id="forecastConditionsContainer">
 
               <!-- Day +1 -->
-            <div class="card custom-card my-1 px-1" style="width: 18rem;">
+            <div class="card custom-card my-2 px-1" style="width: 18rem;">
 
               <div class="card-body p-1">
                 <h5 class="card-title" id="dateEl0">Septober 1st</h5>
@@ -82,7 +82,7 @@
             </div>
 
             <!-- Day +2 -->
-            <div class="card custom-card my-1 px-1" style="width: 18rem;">
+            <div class="card custom-card my-2 px-1" style="width: 18rem;">
 
               <div class="card-body p-1">
                 <h5 class="card-title" id="dateEl1">Septober 1st</h5>
@@ -98,7 +98,7 @@
             </div>
 
             <!-- Day +3 -->
-            <div class="card custom-card my-1 px-1" style="width: 18rem;">
+            <div class="card custom-card my-2 px-1" style="width: 18rem;">
 
               <div class="card-body p-1">
                 <h5 class="card-title" id="dateEl2">Septober 1st</h5>
@@ -114,7 +114,7 @@
             </div>
 
             <!-- Day +4 -->
-            <div class="card custom-card my-1 px-1" style="width: 18rem;">
+            <div class="card custom-card my-2 px-1" style="width: 18rem;">
 
               <div class="card-body p-1">
                 <h5 class="card-title" id="dateEl3">Septober 1st</h5>
@@ -130,7 +130,7 @@
             </div>
 
             <!-- Day +5 -->
-            <div class="card custom-card my-1 px-1" style="width: 18rem;">
+            <div class="card custom-card my-2 px-1" style="width: 18rem;">
 
               <div class="card-body p-1">
                 <h5 class="card-title" id="dateEl4">Septober 1st</h5>
